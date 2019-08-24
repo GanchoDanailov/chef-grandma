@@ -1,14 +1,23 @@
-import { auth } from '@/services/firebase';
 import Cookie from 'js-cookie';
+import { auth } from '@/services/firebase';
 
 export const state = () => ({
   user: null,
 });
 
+export const getters = {
+  isAuthenticated(state) {
+    return state.user != null;
+  },
+  userRoles(state) {
+    return state.userRoles;
+  },
+};
+
 export const mutations = {
   SET_USER: (state, account) => {
     state.user = account;
-  }
+  },
 };
 
 export const actions = {
@@ -22,12 +31,18 @@ export const actions = {
       const { email, uid } = auth.currentUser;
 
       // Set JWT to the cookie
-      Cookie.set('access_token', token);
+      Cookie.set('__session', token);
 
       // Set the user locally
       commit('SET_USER', { email, uid });
     } catch (error) {
       throw error;
     }
-  }
+  },
+  async logout() {
+    await auth.signOut();
+    await Cookie.remove('__session');
+
+    location.href = '/';
+  },
 };

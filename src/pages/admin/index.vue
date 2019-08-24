@@ -2,6 +2,7 @@
   <section>
     <h1>Admin route</h1>
     <a @click="logout">Logout</a>
+    {{$store.state}}
   </section>
 </template>
 
@@ -13,7 +14,7 @@ export default {
   methods: {
     async logout() {
       await auth.signOut();
-      await Cookie.remove("access_token");
+      await Cookie.remove("__session");
 
       location.href = "/";
     }

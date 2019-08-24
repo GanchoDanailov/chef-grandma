@@ -1,6 +1,10 @@
 <template>
   <div class="col-lg-6 mx-auto my-2">
     <h1>Login to your account</h1>
+    <router-link to="/">Home</router-link>
+    <router-link to="/admin">Home</router-link>
+    <br/>
+    {{$store.state}}
     <form @submit.prevent>
       <div class="form-group">
         <input

@@ -19,7 +19,7 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   router: {
-    middleware: ['authenticated'],
+    middleware: ['auth'],
   },
   plugins: [
     // '~/plugins/fireauth.js',
