@@ -1,5 +1,5 @@
-import JWTDecode from "jwt-decode";
-import cookieparser from "cookieparser";
+import JWTDecode from 'jwt-decode';
+import cookieparser from 'cookieparser';
 
 export const actions = {
   nuxtServerInit({ commit }, { req }) {
@@ -12,9 +12,10 @@ export const actions = {
     console.log('decoded', decoded)
 
     if (decoded) {
-      commit("users/SET_USER", {
+      commit('users/SET_USER', {
+        email: decoded.email,
         uid: decoded.user_id,
-        email: decoded.email
+        admin: decoded.admin || false,
       });
     }
   }

@@ -4,7 +4,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'nuxt-ssr-firebase',
+    title: 'Баба готви',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -19,13 +19,14 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   router: {
-    middleware: ['auth'],
+    // middleware: ['auth'],
   },
   plugins: [
     // '~/plugins/fireauth.js',
   ],
   modules: [
     '@nuxtjs/axios',
+    'bootstrap-vue/nuxt',
   ],
   buildDir: 'nuxt',
   build: {

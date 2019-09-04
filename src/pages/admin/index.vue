@@ -11,6 +11,7 @@ import { auth } from "@/services/firebase";
 import Cookie from "js-cookie";
 
 export default {
+  layout: "admin",
   methods: {
     async logout() {
       await auth.signOut();

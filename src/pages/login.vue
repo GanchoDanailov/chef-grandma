@@ -1,17 +1,11 @@
 <template>
- <div>
-   HOME PAGE
- </div>
+  <LoginFrom />
 </template>
 
 <script>
 import LoginFrom from '~/components/LoginForm'
+
 export default {
-  data: () => ({
- 
-  }),
-  methods: {
-  
-  }
-};
+  components: { LoginFrom }
+}
 </script>
