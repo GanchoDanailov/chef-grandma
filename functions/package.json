@@ -12,7 +12,7 @@
     "clone": "^2.1.1",
     "compression": "^1.7.3",
     "@nuxtjs/axios": "^5.5.4",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap-vue": "^2.0.0-rc.28",
     "cookieparser": "^0.1.0",
     "firebase": "^6.4.0",
